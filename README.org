@@ -1,0 +1,17 @@
+#+TITLE: Learn VimScript the hard way
+
+* About this Repo
+The repo is a walk through of [[http://learnvimscriptthehardway.stevelosh.com][Learn Vimscript the Hard Way]]. The book
+is freely distributable providing it is not charged for or modified.
+For further details follow the link above.
+
+This repo though, is my vimrc being developed as I walk through the
+exercises and my own notes in the form of a README summarising the
+main points of each chapter.
+
+
+** License
+The book written by Steve Losh is subject to his own licensing terms.
+Please follow the link above for further clarification.
+
+My own work here is subject to this [[file:LICENSE][repo's license.]]
