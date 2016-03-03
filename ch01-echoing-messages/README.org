@@ -1,0 +1,43 @@
+#+TITLE: Chapter 01 Echoing Messages
+
+* Echoing
+To echo a message to the screen use the ~:echo~ command.  Vim
+postpones redrawing until it has finished a sequence of commands.
+This means an earlier command that requires a redraw can trigger the
+redraw after you have echoed a message to the screen causing your
+message to be erased. There are two solutions to this problem, they
+offer a slightly different solution and are not mutually exclusive.
+
+- ~:echom~ will echo the command to the screen but will also save the
+  message in the message history. This history can be viewed using the
+  ~:messages~ command. This allows you to view a message at a later
+  time even when cleared from the screen.
+- ~:redraw~ forces an immediate redraw and can be called to avoid
+  prior actions redrawing over the screen after the message is echoed.
+  For example the ~:new~ command creates a new buffer and will redraw
+  the screen.
+  #+BEGIN_SRC shell
+    :new | echo "Did you see this"
+    # will not get shown as the screen will be redrawn as soon as the
+    # message is sent
+    :new | redraw | echo "Did you see this"
+    # This will be show as the redraw is forced before the message is
+    #  echoed.
+  #+END_SRC
+
+* Help
+As usual help is your friend. If you have forgotten how to navigate
+vims help just type ~:help~. Useful help on echoing can be found at:
+
+#+BEGIN_SRC shell
+:help echo
+:help echom
+:help messages
+:help echo-redraw
+#+END_SRC
+
+* Exercises
+There is a vimrc file in this directory. It can be loaded with
+~vim -u vimrc~. It contains an exercise to show an ascii cat at
+startup.
+
