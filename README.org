@@ -9,8 +9,14 @@ This repo though, is my vimrc being developed as I walk through the
 exercises and my own notes in the form of a README summarising the
 main points of each chapter.
 
+* Following the exercises
+Each chapter directory will have a vimrc file in it. This will be the
+workings for the walk through of the chapter. This file can be loaded
+in place of the standard vim configuration file using the command
 
-** License
+~vim -u vimrc~
+
+* License
 The book written by Steve Losh is subject to his own licensing terms.
 Please follow the link above for further clarification.
 
