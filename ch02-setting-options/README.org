@@ -1,0 +1,91 @@
+#+TITLE: Setting Options
+
+There are two types of options in vimscript. Types that hold a value
+and those that hold a boolean.
+
+Values are assigned using the ~:set~ command. For the full range of
+options of how set can be called see ~:help set~.
+
+* Finding the value of options
+You can get the value of an option by appending it with a question
+mark.
+
+~:set numberwidth?~
+
+* Value options
+
+Value options can be assigned using ~=~ there is no space between the
+variable, assignment and the value. A space is allowed between the
+variable and the ~=~ but not the ~=~ and the value. Multiple options
+can be set with a space delimited list.
+
+~:set numberwidth=4~
+~:set numberwidth=4 matchtime=5~
+
+Other assigment options include ~+=, -=, ^=~.
+
+* Boolean options
+
+Switch values can be turned on and off. You set them on by calling
+them with ~:set~, you set them off by setting them with no prepended
+to the variable name. Querying the variable will either return the
+variable or the no form of the variable letting you know how it is
+set.
+
+The ~number~ variable is a variable that dictates whether line numbers
+are shown in the editor. The example below gives examples using
+number.
+
+#+begin_src vimscript
+:set number
+:set number?  => number
+:set nonumber
+:set number?  => nonumber
+#+end_src
+
+** Toggle boolean options
+
+Boolean options can be toggled from their current state by appending
+the variable with a bang.
+
+~set number!~
+
+* Exercises
+
+Some useful variables include
+
+** number
+
+~number~ determines whether line numbers are shown in the editor
+
+** relativenumber
+
+~relativenumber~ shows line numbering relative to the cursor. The
+current line is line 0 and lines above and below count up from 1.
+
+** numberwidth
+
+~numberwidth~ is a value that dictates how many columns are assigned
+for the line numbering when shown. This is the minimum number given
+as larger numbers of columns are used if the line numbering place
+value exceeds what is assigned. One of the columns is used to leave a
+space between the numbers and text. This means a numberwidth of 4
+leaves 3 columns for numbers in files up to 999 lines long. When the
+file passes this length then it will use as many columns needed to
+display the line numbers but all lines will use the same number of
+columns.
+
+** wrap
+
+~wrap~ is a boolean value that dictates whether text longer than the
+line scrolls off the screen out of sight or wraps onto the next line.
+
+** shiftround
+
+~shiftround~ is a boolean that indents using ~> and <~ type commands
+to a multiple of shiftwidth. 
+
+** matchtime
+
+~matchtime~ holds an integer representing the number of tenths of a
+second that a matching parenthesis is shown in the editor.

@@ -16,6 +16,13 @@ in place of the standard vim configuration file using the command
 
 ~vim -u vimrc~
 
+** Troubleshooting / launching vim with defaults
+
+You can load vim without any vimrc file to launch and editor with
+vanilla defaults using ~NONE~ as the option for the vimrc file.
+
+~vim -u NONE~
+
 * License
 The book written by Steve Losh is subject to his own licensing terms.
 Please follow the link above for further clarification.
