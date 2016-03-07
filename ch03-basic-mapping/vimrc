@@ -1,0 +1,7 @@
+:map - ddp
+" ddkP does not work on last line (goes up two lines)
+" just use - in this case to bring it back down a line
+" it will also delete lines when the line is the very
+" top line
+:map _ ddkP
+
