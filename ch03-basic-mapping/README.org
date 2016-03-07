@@ -61,5 +61,6 @@ Keys can be unmapped using the ~:unmap~ command.
 ** Listing the mappings
 
 ~map~ will display all the mappings in normal visual and select mode.
+
 ~map!~ will display all the mappings for insert and command line mode.
 
