@@ -1,7 +1,6 @@
-:map - ddp
-" ddkP does not work on last line (goes up two lines)
-" just use - in this case to bring it back down a line
-" it will also delete lines when the line is the very
-" top line
-:map _ ddkP
+" must explicitly set nocp unless the file is ~/.vimrc
+set nocp
+" better solutions to moving lines up and down using the move command
+noremap - :m .+1 <cr>
+noremap _ :m .-2 <cr>
 
