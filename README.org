@@ -23,6 +23,19 @@ vanilla defaults using ~NONE~ as the option for the vimrc file.
 
 ~vim -u NONE~
 
+** The Compatability mode trap
+
+If vim launches and detects a ~.vimrc~ file in your home directory it
+launches in nocompatable mode. This means it breaks backward
+compatability with vi. If you launch vim with the ~-u~ switch either
+with a file argument or with ~NONE~ then it will launch in compatible
+mode instead. To fix this you have two options
+
+- add ~set nocp~ to the top of your vimscript file to set nocmpatibile
+  mode explicitly.
+- launch vim with the ~-N~ option this is particulary useful if you
+  are lauchning vim without any configuration file ~vim -N -u NONE~.
+
 * License
 The book written by Steve Losh is subject to his own licensing terms.
 Please follow the link above for further clarification.
