@@ -1,0 +1,37 @@
+#+TITLE: Modal Mapping
+
+* Modal Mapping
+
+In the basic mapping section we discoverd ~map~, there is also
+~noremap~, both of which set the mapping across all of the modes.
+
+You can be more specific by declaring which mode you want the mapping
+to apply to. These commands are ~nmap, vmap and imap~ and are for
+normal, visual and insert mode respectively.
+
+** Binding same key for different tasks in multiple modes
+
+You can therefore bind a key in different modes and the key will
+perform different tasks depending on which mode you are in.
+
+*** Example
+
+If you wanted to bind the ~\~ key to uppercase a selection in visual
+mode and delete a line in normal mode you would run the following.
+
+#+begin_src vimscript
+:nmap \ dd
+:vmap \ U
+#+end_src
+
+** Insert mode peculiarities
+
+When creating a keybinding in insert mode many times you will want to
+carry out an action in normal mode and return to insert mode.
+
+This means that ~:imap <c-d> dd~ would just insert the text ~dd~ when
+~<ctrl-d>~ is typed. If you wanted to delete a line then you would
+need to escape into normal mode, carry out the instruction and then
+return to insert mode.
+
+~:imap <c-d> <esc>~
