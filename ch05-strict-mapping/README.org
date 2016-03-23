@@ -1,0 +1,49 @@
+#+TITLE: Strict Mapping
+
+* Recursive and non recursive mapping
+
+All the mapping discussed to date has been recursive mapping. Take the
+following example.
+
+#+begin_src vimscript
+:nmap - dd
+:nmap \ -
+#+end_src
+
+With the mappings above, when the '\' key is pressed it substitues the
+key press for a '-'. However the '-' key has been mapped to deleting a
+line and so this mapping is executed resulting in the original key
+press deleting a line.
+
+This can cause mappings that never terminate.
+
+~:nmap dd O<esc>jddk~
+
+will call ~dd~ recursively forever until you press ~<CTRL-C>~.
+
+** unmapping
+
+keys can be unmapped all of the map functions have equivalent unmap
+functions; unmap, vunma, inmap, nunmap etc.
+
+~:unmap -~
+will unmap the - key
+
+** Side effects
+
+There is a very real risk of installing a plugin that changes the
+behaviour of a key you have already mapped. You might not even be
+aware that such a mapping ocurred with the plugin.
+
+** Nonrecursive mapping
+
+Vim offers another set of functions that will not take account of
+other mappings when they perform their actions. And uses the actions
+bound by vims defaults.
+
+These functions are noremap, nnoremap, vnoremap, inoremap etc.
+
+You should always use the noremap functions for you mappings the
+standing map functions runs the risk of conflicting with too many
+other things including plugins.
+

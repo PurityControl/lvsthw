@@ -1,0 +1,6 @@
+set nocp
+
+" capitalize a word with <ctrl-u> in normal and visual modes
+inoremap <c-u>  <esc>viwUea
+nnoremap <c-u>  viwUe
+
