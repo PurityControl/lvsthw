@@ -36,6 +36,16 @@ mode instead. To fix this you have two options
 - launch vim with the ~-N~ option this is particulary useful if you
   are lauchning vim without any configuration file ~vim -N -u NONE~.
 
+* What about Emacs?
+
+This format used for learning vim is an excellent way to get to learn
+emacs too. As a result this I will endevour to add an Emacs section to
+each of the README's explaining how to do an equivalent in Emacs.
+
+It may highlight differences as well as commonalities between the two
+editors. It might also describe different ways of achieving similar
+effects in Emacs either through Evil mode or a native Emacs solution.
+
 * License
 The book written by Steve Losh is subject to his own licensing terms.
 Please follow the link above for further clarification.
