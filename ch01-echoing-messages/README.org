@@ -42,7 +42,7 @@ There is a vimrc file in this directory. It can be loaded with
 startup.
 
 * Emacs
-  ** Messages
+** Messages
   In emacs there is no differntiation between persistent and
   non-persistent editing. Any message put into minibuffer is also
   saved into the =*Messages*= buffer so it can be viewed when needed.
@@ -57,7 +57,7 @@ startup.
   #+RESULTS:
   : 1000
   
-  Comments
+**  Comments
   Emacs comments are defined by =;=. It is a convention that the
   number of semicolons dictate the type of comment
 
