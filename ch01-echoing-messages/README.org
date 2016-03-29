@@ -44,7 +44,7 @@ startup.
 * Emacs
 ** Messages
   In emacs there is no differntiation between persistent and
-  non-persistent editing. Any message put into minibuffer is also
+  non-persistent echoing. Any message put into minibuffer is also
   saved into the =*Messages*= buffer so it can be viewed when needed.
 
   The amount of lines to store in the message buffer is stored in an
