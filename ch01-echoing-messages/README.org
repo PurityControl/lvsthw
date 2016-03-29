@@ -41,3 +41,38 @@ There is a vimrc file in this directory. It can be loaded with
 ~vim -u vimrc~. It contains an exercise to show an ascii cat at
 startup.
 
+* Emacs
+  ** Messages
+  In emacs there is no differntiation between persistent and
+  non-persistent editing. Any message put into minibuffer is also
+  saved into the =*Messages*= buffer so it can be viewed when needed.
+
+  The amount of lines to store in the message buffer is stored in an
+  emacs variable =message-log-max=.
+
+  #+BEGIN_SRC emacs-lisp
+  message-log-max
+  #+END_SRC
+
+  #+RESULTS:
+  : 1000
+  
+  Comments
+  Emacs comments are defined by =;=. It is a convention that the
+  number of semicolons dictate the type of comment
+
+  - =;;;;= top of file
+  - =;;;= comment on its own line
+  - =;;= comment on its own line indented with source code
+  - =;= end of line comment
+
+  #+BEGIN_EXAMPLE emacs-lisp
+    ;;;; my comment at the top of the file
+
+    ;;; A line comment
+
+    (defun my-fun ()
+      ;; comment indented along with code
+      (body) ; line comment)      
+  #+END_EXAMPLE
+  
