@@ -89,3 +89,88 @@ to a multiple of shiftwidth.
 
 ~matchtime~ holds an integer representing the number of tenths of a
 second that a matching parenthesis is shown in the editor.
+* Emacs
+** Variables
+In emacs a variable is a symbol that has a value. 
+Emacs Lisp allows any variable (with a few exceptions) to have any
+kind of value.
+The [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Variables.html#Variables][emacs manual]] has comprehensive documentation on variables.
+
+*** Setting Variables
+Emacs distinguishes between variables that are customisable and those
+that are not.
+
+**** Customisable Variables
+Customisable variables are defined with =defcustom=.  Variables that
+are customisable can be set with =custom-set-variables= or
+=customize-set-variable=. By using these functions you are sure that
+any intended initialization or updating code that is needed for the
+option value will be automatically triggered and run as needed. If you
+use setq, this will not be done. There are many customisable variables
+that do not use features that =customize-set-variable= and
+=custom-set-variables= take care of. In such a case using =setq= will
+not make a difference, so many times you may get away with using
+=setq=. However this is a poor practice.
+
+**** Uncustomisable Variables
+These are simply variables that are not customisable and can be set
+using the =setq= command. If you use the functions mentioned in
+Customisable variables by accident it won't actually cause any
+harm. So a better practice would be to use them unless you are certain
+=setq= is safe.
+
+*** Voiding variables
+To unset variables or functions use =makunbound= and =fmakunbound=
+respectively.
+
+*** Checking options
+
+Values can be checked by either evaluating them in a buffer or looking
+up the variable in Emacs help.
+
+**** Evaluating a variable
+
+The scratch buffer is a good place to evaluate a variable. Simply type
+the variable name and with the cursor after the variable type =C-x
+C-e=.
+
+**** Emacs variable help
+
+=C-h v 'variable-name'= will give you any documentation regarding the
+variable and also show the variables current value.
+
+*** Setting multiple options at once
+
+=custom-set-variables= and =setq= will allow mutliple options to be
+set at once.
+
+** Numbering
+
+Linum mode =M-x linum=mode= will show line numbers in the current
+buffer.
+
+Line numbering can also be switched on for all buffers using =M-x
+globa-linum-mode=. 
+
+*** Relative Numbering and Numberwidth
+
+Melpa has a package called relative-linum that can show relative line
+numbers.
+
+Additionally =linum-format= is a variable for linum-mode. It can take
+a format string showing how the numbers should be displayed. This
+would allow you to set the equivalent of vim's =numberwidt= property.
+Alternatively it can take a function which should evaluate to a string
+that is show on the current line. This could be used to implement
+relative numbering.
+
+** Vim / Emacs variable comparisons
+
+| Vim            | Emacs                                  |
+|----------------+----------------------------------------|
+| numberwidth    | linum-format see above                 |
+| relativenumber | linum-format, relative-linum see above |
+| wrap           | use buffer local truncate-lines        |
+| matchtime      | blink-matching-delay                   |
+|----------------+----------------------------------------|
+
